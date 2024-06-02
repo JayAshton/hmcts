@@ -1,0 +1,18 @@
+{
+  "name": "hmcts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "playwright:clean": "rm -rf allure-report; rm -rf allure-results; rm -rf log; rm -rf playwright-report; rm -rf test-results"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.9.0",
+    "@playwright/test": "^1.44.1",
+    "@types/node": "^20.12.12",
+    "allure-playwright": "2.15.1"
+  }
+}
