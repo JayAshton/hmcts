@@ -19,7 +19,7 @@ test.describe('Login tests for saucedemo.com @regression', () => {
   }) => {
     await loginPage.login(users.locked.username, users.locked.password);
     const errors = await loginPage.validationFragment.allInputErrors();
-    expect(errors).toContain(loginPage.validationFragment.lockedError);
+    await expect(errors).toContain(loginPage.validationFragment.lockedError);
   });
 
   test('A user who has not logged in, cannot access another area of the site', async ({
@@ -29,7 +29,7 @@ test.describe('Login tests for saucedemo.com @regression', () => {
     const path = '/inventory.html';
     await page.goto(path);
     const errors = await loginPage.validationFragment.allInputErrors();
-    expect(errors).toContain(
+    await expect(errors).toContain(
       loginPage.validationFragment.restrictedError(path)
     );
   });
